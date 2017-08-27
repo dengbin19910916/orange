@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: orange-config-server
+server:
+  port: 7001
