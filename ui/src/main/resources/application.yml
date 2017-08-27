@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: orange-ui-service
+server:
+  port: 80
