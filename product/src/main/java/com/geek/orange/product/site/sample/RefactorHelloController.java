@@ -16,18 +16,21 @@ public class RefactorHelloController implements HelloService {
     @ApiOperation(value = "显示名称")
     @Override
     public String hello(@RequestParam("name") String name) {
+        System.err.println("name = " + name);
         return "Hello " + name;
     }
 
     @ApiOperation("显示名称和姓名")
     @Override
     public User hello(@RequestHeader("name") String name, @RequestHeader("age") Integer age) {
+        System.err.println("user1 = " + new User(name, age));
         return new User(name, age);
     }
 
     @ApiOperation("使用User对象显示名称和姓名")
     @Override
     public String hello(@RequestBody User user) {
+        System.err.println("user2 = " + user);
         return "Hello " + user.getName() + ", " + user.getAge();
     }
 }
