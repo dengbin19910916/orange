@@ -11,7 +11,7 @@ spring:
           password: password
       fail-fast: true
 server:
-  port: 7001
+  port: 8888
 #spring:
 #  application:
 #    name: orange-config-server
