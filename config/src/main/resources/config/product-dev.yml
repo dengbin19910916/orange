@@ -1,0 +1,8 @@
+url: 192.168.100.100
+from: git-dev-1.0
+git:
+  from: git-123
+
+swagger:
+  title: 橘子应用
+  description: Spring Boot and Spring Cloud测试项目（代码已提交至github）。
