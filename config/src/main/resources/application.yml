@@ -1,26 +1,27 @@
-spring:
-  application:
-    name: orange-config-server
-  cloud:
-    config:
-      server:
-        git:
-          uri: http://git.oschina.net/didispace/SpringCloud-Learning
-          search-paths: spring_cloud_in_action/config-repo
-          username: username
-          password: password
-      fail-fast: true
-server:
-  port: 8888
 #spring:
 #  application:
 #    name: orange-config-server
-#  profiles:
-#    active: native
 #  cloud:
 #    config:
 #      server:
-#        native:
-#          search-locations: classpath:/config
+#        git:
+#          uri: http://git.oschina.net/didispace/SpringCloud-Learning
+#          uri: https://github.com/dengbin19910916/orange/${application}-config
+#          search-paths: spring_cloud_in_action/config-repo
+#          username: username
+#          password: password
+#      fail-fast: true
 #server:
 #  port: 8888
+spring:
+  application:
+    name: orange-config-server
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/config/
+server:
+  port: 8888

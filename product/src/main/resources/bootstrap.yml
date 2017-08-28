@@ -1,10 +1,12 @@
 spring:
   application:
-    name: didispace
+    name: product
   cloud:
     config:
-      uri: http://localhost:7001
+      uri: http://localhost:8888
       profile: dev
-      label: master
+      discovery:
+        enabled: true
+        service-id: orange-config-server
 server:
-  port: 7002
+  port: 8080
