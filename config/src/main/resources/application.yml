@@ -1,5 +1,21 @@
+#spring:
+#  application:
+#    name: orange-config-server
+#  cloud:
+#    config:
+#      server:
+#        git:
+#          uri: http://git.oschina.net/didispace/SpringCloud-Learning
+#          search-paths: spring_cloud_in_action/config-repo
+#          username: username
+#          password: password
+#server:
+#  port: 7001
 spring:
-  application:
-    name: orange-config-server
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/config
 server:
-  port: 7001
+  port: 8888
