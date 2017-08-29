@@ -6,12 +6,12 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/refactor")
 public interface HelloService {
 
-    @GetMapping("/hello4")
+    @GetMapping("/hello1")
     String hello(@RequestParam("name") String name);
 
-    @GetMapping("/hello5")
+    @GetMapping("/hello2")
     User hello(@RequestHeader("name") String name, @RequestHeader("age") Integer age);
 
-    @PostMapping("/hello6")
+    @PostMapping("/hello3")
     String hello(@RequestBody User user);
 }

@@ -13,18 +13,13 @@ eureka:
 # 路由规则
 zuul:
   routes:
-    api-a:
-      path: /api-a/**
-zuul:
-  routes:
-    api-a:
+    product-service:
+      path: /product-service/**
       service-id: product-service
+
 
 zuul:
   routes:
-    api-b:
-      path: /api-b/**
-zuul:
-  routes:
-    api-b:
+    ui-service:
+      path: /ui-service/**
       service-id: ui-service
