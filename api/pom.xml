@@ -24,4 +24,8 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 	</dependencies>
+
+	<build>
+		<finalName>orange-${project.name}</finalName>
+	</build>
 </project>
