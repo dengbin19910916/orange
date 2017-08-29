@@ -1,3 +1,6 @@
-#spring:
-#  application:
-#    name: product-service
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: springcloud
+    password: 123456

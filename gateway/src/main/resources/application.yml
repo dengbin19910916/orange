@@ -11,15 +11,19 @@ eureka:
       default-zone: http://localhost:8761/eureka/
 
 # 路由规则
-zuul:
-  routes:
-    product-service:
-      path: /product-service/**
-      service-id: product-service
+#zuul:
+#  routes:
+#    product-service: /product-service/**
+#    ui-service: /ui-service/**
 
-
-zuul:
-  routes:
-    ui-service:
-      path: /ui-service/**
-      service-id: ui-service
+#zuul:
+#  routes:
+#    product-service:
+#      path: /product-service/**
+#      service-id: product-service
+#
+#zuul:
+#  routes:
+#    ui-service:
+#      path: /ui-service/**
+#      service-id: ui-service
