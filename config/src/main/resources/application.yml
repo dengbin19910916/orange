@@ -15,7 +15,7 @@
 #  port: 8888
 spring:
   application:
-    name: orange-config-server
+    name: config-server
   profiles:
     active: native
   cloud:

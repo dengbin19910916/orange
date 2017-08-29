@@ -9,7 +9,7 @@
 	<packaging>jar</packaging>
 
 	<name>config</name>
-	<description>Orange Config Service</description>
+	<description>Orange Config Server</description>
 
 	<parent>
 		<groupId>com.geek</groupId>
@@ -30,6 +30,8 @@
 	</dependencies>
 
 	<build>
+        <finalName>config-server</finalName>
+
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
