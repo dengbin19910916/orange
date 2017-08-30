@@ -6,3 +6,7 @@ git:
 swagger:
   title: 橘子应用
   description: Spring Boot and Spring Cloud测试项目（代码已提交至github）。
+
+passport:
+  image:
+    directory: C:\WorkSpace\upload

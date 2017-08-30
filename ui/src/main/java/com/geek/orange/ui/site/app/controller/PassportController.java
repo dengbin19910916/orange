@@ -7,11 +7,17 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Base64;
+import java.util.List;
 
 @Controller
 @RequestMapping("/app/passport")
@@ -40,17 +46,13 @@ public class PassportController {
     }
 
     @PostMapping
-    public String save(@RequestParam("passport") MultipartFile[] passports) {
-//        Passport[] passports = new Passport[2];
-//        Passport p1 = new Passport("one.jpg", ENCODER.encodeToString("哈士奇".getBytes()));
-//        passports[0] = p1;
-//        Passport p2 = new Passport("two.jpg", ENCODER.encodeToString("萨摩耶".getBytes()));
-//        passports[1] = p2;
-//        passportService.save(passports);
-        System.err.println("passport length = " + passports.length);
-        for (MultipartFile passport : passports) {
-            System.out.println("passport name: " + passport.getOriginalFilename());
+    public String save(@RequestParam("passport") MultipartFile[] files) throws IOException {
+        List<Passport> passports = new ArrayList<>();
+        for (MultipartFile file : files) {
+            passports.add(new Passport(file));
         }
+        passportService.save(passports.toArray(new Passport[passports.size()]));
+
         return "redirect:/ui-service/app/information?reqId=600123";
     }
 }
