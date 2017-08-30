@@ -4,11 +4,10 @@ import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
 
-@Component
+//@Component
 public class AccessFilter extends ZuulFilter {
 
     private final static Logger logger = LoggerFactory.getLogger(AccessFilter.class);

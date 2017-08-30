@@ -9,6 +9,8 @@ eureka:
   client:
     service-url:
       default-zone: http://localhost:8761/eureka/
+zuul:
+  add-host-header: true
 
 # 路由规则
 #zuul:
@@ -27,3 +29,5 @@ eureka:
 #    ui-service:
 #      path: /ui-service/**
 #      service-id: ui-service
+#zuul:
+#  prefix: /api

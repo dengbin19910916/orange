@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Arrays;
 import java.util.Base64;
@@ -28,23 +29,28 @@ public class PassportController {
     }
 
     @GetMapping
-    @ResponseBody
-    public String index(@RequestParam("reqId") Long reqId, Model model) {
-        Passport[] passports = passportService.search(reqId);
-        System.err.println("passports = " + Arrays.toString(passports));
-        model.addAttribute("passports", passports);
-        return "show passport";
+    public String index(@RequestParam(value = "reqId", required = false) Long reqId, Model model) {
+        if (reqId != null) {
+            Passport[] passports = passportService.search(reqId);
+            model.addAttribute("passports", passports);
+            System.err.println("passports = " + Arrays.toString(passports));
+        }
+
+        return "app/passport";
     }
 
     @PostMapping
-    @ResponseBody
-    public String save() {
-        Passport[] passports = new Passport[2];
-        Passport p1 = new Passport("one.jpg", ENCODER.encodeToString("哈士奇".getBytes()));
-        passports[0] = p1;
-        Passport p2 = new Passport("two.jpg", ENCODER.encodeToString("萨摩耶".getBytes()));
-        passports[1] = p2;
-        passportService.save(passports);
-        return "saved passport";
+    public String save(@RequestParam("passport") MultipartFile[] passports) {
+//        Passport[] passports = new Passport[2];
+//        Passport p1 = new Passport("one.jpg", ENCODER.encodeToString("哈士奇".getBytes()));
+//        passports[0] = p1;
+//        Passport p2 = new Passport("two.jpg", ENCODER.encodeToString("萨摩耶".getBytes()));
+//        passports[1] = p2;
+//        passportService.save(passports);
+        System.err.println("passport length = " + passports.length);
+        for (MultipartFile passport : passports) {
+            System.out.println("passport name: " + passport.getOriginalFilename());
+        }
+        return "redirect:/ui-service/app/information?reqId=600123";
     }
 }
