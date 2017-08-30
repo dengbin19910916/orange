@@ -2,8 +2,6 @@ package com.geek.orange.ui.site.app.controller;
 
 import com.geek.orange.api.app.dto.Passport;
 import com.geek.orange.api.app.service.PassportService;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,18 +14,13 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Base64;
 import java.util.List;
 
 @Controller
 @RequestMapping("/app/passport")
 public class PassportController {
 
-    private static final Logger log = LogManager.getLogger(PassportController.class);
-
     private final PassportService passportService;
-
-    private static final Base64.Encoder ENCODER = Base64.getEncoder();
 
     @Autowired
     public PassportController(PassportService passportService) {
