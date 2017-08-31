@@ -10,5 +10,5 @@ public interface PassportService {
     Passport[] search(@RequestParam("reqId") Long reqId);
 
     @PostMapping("/passport")
-    void save(@RequestBody Passport[] passports);
+    String[] save(@RequestBody Passport[] passports);
 }

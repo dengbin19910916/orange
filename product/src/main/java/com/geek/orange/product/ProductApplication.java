@@ -23,4 +23,12 @@ public class ProductApplication {
 	public String hello() {
 	    return "hello, " + from + "!";
     }
+
+	@Value("${passport.image.directory}")
+	private String directory;
+
+	@GetMapping("/directory")
+	public String directory() {
+		return "hello, " + directory + "!";
+	}
 }
