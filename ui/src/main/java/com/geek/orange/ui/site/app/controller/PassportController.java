@@ -44,7 +44,8 @@ public class PassportController {
         for (MultipartFile file : files) {
             passports.add(new Passport(file));
         }
-        passportService.save(passports.toArray(new Passport[passports.size()]));
+        String[] paths = passportService.save(passports.toArray(new Passport[passports.size()]));
+        System.err.println("paths = " + Arrays.toString(paths));
 
         return "redirect:/ui-service/app/information?reqId=600123";
     }
