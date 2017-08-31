@@ -27,8 +27,6 @@ public class PassportController implements PassportService {
 
     private static final Logger log = LogManager.getLogger(PassportController.class);
 
-    private static final Base64.Decoder DECODER = Base64.getDecoder();
-
     @Value("${passport.image.directory}")
     private String imageDir;
 
